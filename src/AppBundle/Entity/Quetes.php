@@ -55,7 +55,7 @@ class Quetes
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $idRegle;
+    private $reglesRegle;
 
     /**
      * Constructor
@@ -63,7 +63,7 @@ class Quetes
     public function __construct()
     {
         $this->idUtilisateur = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->idRegle = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->reglesRegle = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -279,37 +279,36 @@ class Quetes
     }
 
     /**
-     * Add idRegle
+     * Add reglesRegle
      *
-     * @param \AppBundle\Entity\Regles $idRegle
+     * @param \AppBundle\Entity\Regles $reglesRegle
      *
      * @return Quetes
      */
-    public function addIdRegle(\AppBundle\Entity\Regles $idRegle)
+    public function addReglesRegle(\AppBundle\Entity\Regles $reglesRegle)
     {
-        $this->idRegle[] = $idRegle;
+        $this->reglesRegle[] = $reglesRegle;
 
         return $this;
     }
 
     /**
-     * Remove idRegle
+     * Remove reglesRegle
      *
-     * @param \AppBundle\Entity\Regles $idRegle
+     * @param \AppBundle\Entity\Regles $reglesRegle
      */
-    public function removeIdRegle(\AppBundle\Entity\Regles $idRegle)
+    public function removeReglesRegle(\AppBundle\Entity\Regles $reglesRegle)
     {
-        $this->idRegle->removeElement($idRegle);
+        $this->reglesRegle->removeElement($reglesRegle);
     }
 
     /**
-     * Get idRegle
+     * Get reglesRegle
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getIdRegle()
+    public function getReglesRegle()
     {
-        return $this->idRegle;
+        return $this->reglesRegle;
     }
 }
-
