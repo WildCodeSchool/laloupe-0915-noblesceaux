@@ -1,0 +1,62 @@
+AppBundle\Entity\Extraits:
+    type: entity
+    table: extraits
+    indexes:
+        fk_extraits_regles1_idx:
+            columns:
+                - id_regle
+        fk_extraits_butins1_idx:
+            columns:
+                - id_butin
+    id:
+        idExtrait:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_extrait
+    fields:
+        extrait:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        auteur:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        source:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        difficulte:
+            type: boolean
+            nullable: false
+    oneToOne:
+        idRegle:
+            targetEntity: Regles
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_regle:
+                    referencedColumnName: id_regle
+            orphanRemoval: false
+        idButin:
+            targetEntity: Butins
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_butin:
+                    referencedColumnName: id_butin
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

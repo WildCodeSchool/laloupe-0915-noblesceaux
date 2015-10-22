@@ -1,0 +1,30 @@
+{# This file is part of the Sonata package. #}
+
+{% extends "SonataUserBundle:Profile:action.html.twig" %}
+
+{% block sonata_profile_title %}
+    {{ "title_user_account" | trans({}, 'SonataUserBundle')}} - {{ "title_user_edit_profile" | trans({}, 'SonataUserBundle')}}
+{% endblock %}
+
+{% block sonata_profile_content %}
+    {{ form_errors(form) }}
+
+    {% form_theme form _self %}
+
+     {# user profile #}
+    <div>
+        <div>
+            <h3>{{ "title_user_account" | trans({}, 'SonataUserBundle')}}</h3>
+        </div>
+        <div>
+            <form action="{{ path('sonata_user_profile_edit') }}" method="POST">
+                {{ form_widget(form) }}
+                <div>
+                    <button type="submit" name="submit">{{ 'sonata_user_submit'|trans({}, 'SonataUserBundle') }}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {% render url("sonata_user_profile_edit_authentication") %}
+{% endblock %}

@@ -1,0 +1,61 @@
+AppBundle\Entity\Questionnaires:
+    type: entity
+    table: questionnaires
+    indexes:
+        fk_qcm_regles1_idx:
+            columns:
+                - id_regle
+        fk_questionnaires_butins1_idx:
+            columns:
+                - id_butin
+    id:
+        idQuestion:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_question
+    fields:
+        question:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+        reponsesPossibles:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: reponses_possibles
+        bonneReponse:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: bonne_reponse
+    oneToOne:
+        idRegle:
+            targetEntity: Regles
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_regle:
+                    referencedColumnName: id_regle
+            orphanRemoval: false
+        idButin:
+            targetEntity: Butins
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_butin:
+                    referencedColumnName: id_butin
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

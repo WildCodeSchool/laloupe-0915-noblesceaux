@@ -1,0 +1,11 @@
+<div>
+    {% block sonata_profile_menu %}
+        {{ sonata_block_render({'type': 'sonata.user.block.menu'}, {'current_uri': app.request.requestUri}) }}
+        <a href=" {{ url('homepage') }}logout">Se déconnecter</a>
+    {% endblock %}
+</div>
+
+<div>
+    {% include 'SonataCoreBundle:FlashMessage:render.html.twig' %}
+    {% block sonata_profile_content '' %}
+</div>

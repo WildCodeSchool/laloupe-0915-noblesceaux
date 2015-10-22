@@ -1,0 +1,64 @@
+AppBundle\Entity\QuetesEnCours:
+    type: entity
+    table: quetes_en_cours
+    indexes:
+        fk_quetes_en_cours_quetes1_idx:
+            columns:
+                - id_quete
+        fk_quetes_en_cours_utilisateurs1_idx:
+            columns:
+                - id_utilisateur
+    id:
+        pvActuels:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: pv_actuels
+    fields:
+        extraitsEnAttente:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: extraits_en_attente
+        etapeActuelle:
+            type: boolean
+            nullable: false
+            column: etape_actuelle
+        nbErreurs:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: true
+            column: nb_erreurs
+        nbActions:
+            type: smallint
+            nullable: false
+            options:
+                unsigned: true
+            column: nb_actions
+    oneToOne:
+        idQuete:
+            targetEntity: Quetes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_quete:
+                    referencedColumnName: id_quete
+            orphanRemoval: false
+        idUtilisateur:
+            targetEntity: Utilisateurs
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_utilisateur:
+                    referencedColumnName: id_utilisateur
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

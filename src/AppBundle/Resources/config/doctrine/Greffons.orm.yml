@@ -1,0 +1,37 @@
+AppBundle\Entity\Greffons:
+    type: entity
+    table: greffons
+    indexes:
+        fk_greffons_regles1_idx:
+            columns:
+                - id_regle
+    id:
+        idGreffon:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_greffon
+    fields:
+        ordre:
+            type: boolean
+            nullable: false
+        supplement:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    oneToOne:
+        idRegle:
+            targetEntity: Regles
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_regle:
+                    referencedColumnName: id_regle
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

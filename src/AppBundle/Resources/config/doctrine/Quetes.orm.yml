@@ -1,0 +1,86 @@
+AppBundle\Entity\Quetes:
+    type: entity
+    table: quetes
+    id:
+        idQuete:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_quete
+            generator:
+                strategy: IDENTITY
+    fields:
+        codeCategorie:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+            column: code_categorie
+        nbEtapes:
+            type: boolean
+            nullable: false
+            column: nb_etapes
+        type:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        difficulte:
+            type: boolean
+            nullable: false
+        masque:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+        hautFait:
+            type: boolean
+            nullable: false
+            column: haut_fait
+        tempsLimite:
+            type: smallint
+            nullable: true
+            options:
+                unsigned: false
+            column: temps_limite
+    manyToMany:
+        idUtilisateur:
+            targetEntity: Utilisateurs
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: idQuete
+            joinTable:
+                name: quetes_achevees
+                joinColumns:
+                    -
+                        name: id_quete
+                        referencedColumnName: id_quete
+                inverseJoinColumns:
+                    -
+                        name: id_utilisateur
+                        referencedColumnName: id_utilisateur
+            orderBy: null
+        idRegle:
+            targetEntity: Regles
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: idQuete
+            joinTable:
+                name: quetes_has_regles
+                joinColumns:
+                    -
+                        name: id_quete
+                        referencedColumnName: id_quete
+                inverseJoinColumns:
+                    -
+                        name: id_regle
+                        referencedColumnName: id_regle
+            orderBy: null
+    lifecycleCallbacks: {  }

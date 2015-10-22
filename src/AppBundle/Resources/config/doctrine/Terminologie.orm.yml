@@ -1,0 +1,46 @@
+AppBundle\Entity\Terminologie:
+    type: entity
+    table: terminologie
+    indexes:
+        fk_terminologie_regles1_idx:
+            columns:
+                - id_regle
+    id:
+        idTerme:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_terme
+    fields:
+        terme:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        definition:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+        liens:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+    oneToOne:
+        idRegle:
+            targetEntity: Regles
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_regle:
+                    referencedColumnName: id_regle
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

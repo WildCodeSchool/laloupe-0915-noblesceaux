@@ -1,0 +1,45 @@
+AppBundle\Entity\Butins:
+    type: entity
+    table: butins
+    id:
+        idButin:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_butin
+            generator:
+                strategy: IDENTITY
+    fields:
+        butin:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        probabilite:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+        parchemin:
+            type: boolean
+            nullable: false
+        texteParchemin:
+            type: text
+            nullable: true
+            length: 65535
+            options:
+                fixed: false
+            column: texte_parchemin
+    manyToMany:
+        idUtilisateur:
+            targetEntity: Utilisateurs
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: idButin
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

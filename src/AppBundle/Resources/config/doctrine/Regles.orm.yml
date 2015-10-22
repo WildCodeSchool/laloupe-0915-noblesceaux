@@ -1,0 +1,36 @@
+AppBundle\Entity\Regles:
+    type: entity
+    table: regles
+    id:
+        idRegle:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_regle
+            generator:
+                strategy: IDENTITY
+    fields:
+        intitule:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        synthese:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+    manyToMany:
+        idQuete:
+            targetEntity: Quetes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: idRegle
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }
