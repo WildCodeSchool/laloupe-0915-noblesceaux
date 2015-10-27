@@ -1,16 +1,19 @@
 body {
     background: #D8D8D8;
 }
+
 h1 {
     font-family: Arial;
     margin-bottom: 70%;
     margin-left: 5%;
 }
+
 .form-horizontal{
     float: right;/* Attention à appliquer un float: none; au prochain block qui se situera en dessous. */
     margin: 5px;
     border-bottom: red solid 2px;
 }
+
 .form-group{
     /*  padding-left: 80%;
      */ display: inline-block;
@@ -24,6 +27,25 @@ h1 {
 .ligne{
     border-top: red solid 2px;
 }
+
+.form-group{
+/*  padding-left: 80%;
+ */ display: inline-block;
+
+}
+
+.form-block{
+    display: block;
+}
+
+.form-control{
+    width: 65%;
+}
+
+.ligne{
+    border-top: red solid 2px;
+}
+
 /** slide**/
 .swiper-container {
     margin: 0 auto;
@@ -100,6 +122,7 @@ h1 {
     height: 100%;
     position: relative;
 }
+
 /* a11y */
 .swiper-container .swiper-notification {
     position: absolute;
@@ -487,7 +510,8 @@ body {
     -webkit-align-items: center;
     align-items: center;
 }
-.presentation{
+
+.presentation {
     margin-top: -40%;
     display: inline-block;
     text-align: center;
