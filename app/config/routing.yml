@@ -1,6 +1,6 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+homepage:
+    path: /
+    defaults: { _controller: SonataUserBundle:SecurityFOSUser1:login }
 
 # app/config/routing.yml
 

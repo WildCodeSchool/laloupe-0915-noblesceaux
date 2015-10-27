@@ -7,16 +7,19 @@ AppBundle\Entity\QuetesEnCours:
                 - id_quete
         fk_quetes_en_cours_utilisateurs1_idx:
             columns:
-                - id_utilisateur
+                - id
     id:
-        pvActuels:
+        id:
             type: integer
             nullable: false
             options:
                 unsigned: false
             id: true
-            column: pv_actuels
     fields:
+        pvActuels:
+            type: integer
+            nullable: false
+            column: pv_actuels
         extraitsEnAttente:
             type: text
             nullable: false
@@ -52,13 +55,13 @@ AppBundle\Entity\QuetesEnCours:
                     referencedColumnName: id_quete
             orphanRemoval: false
         idUtilisateur:
-            targetEntity: Utilisateurs
+            targetEntity: Application\Sonata\UserBundle\Entity\User
             cascade: {  }
             fetch: LAZY
             mappedBy: null
             inversedBy: null
             joinColumns:
                 id_utilisateur:
-                    referencedColumnName: id_utilisateur
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

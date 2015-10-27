@@ -35,7 +35,7 @@ AppBundle\Entity\Butins:
             column: texte_parchemin
     manyToMany:
         idUtilisateur:
-            targetEntity: Utilisateurs
+            targetEntity: Application\Sonata\UserBundle\Entity\User
             cascade: {  }
             fetch: LAZY
             mappedBy: idButin
