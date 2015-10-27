@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
     background: #D8D8D8;
 }
@@ -499,13 +498,9 @@ body {
     align-items: center;
 }
 
-.presentation{
+.presentation {
     margin-top: -40%;
     display: inline-block;
     text-align: center;
     margin-left: 30%;
-=======
-body{
-    background: yellow;
->>>>>>> ac8996a8defcd53990389eb070bbe6805813af91
 }
