@@ -18,6 +18,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
     */
     public function load(ObjectManager $manager)
     {
+
         $factory = $this->getSecurityManager();
 
         $userAdmin = new User();
@@ -29,21 +30,16 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         $userAdmin->setEnabled(true);
         $userAdmin->setSuperAdmin(true);
 
+
         $manager->persist($userAdmin);
         $manager->flush();
     }
 
-    /**
-     * @return \Symfony\Component\Security\Core\Encoder\EncoderFactory
-     */
     public function getSecurityManager()
     {
         return $this->container->get('security.encoder_factory');
     }
 
-    /**
-     * {@inheritDoc}
-     */
     public function setContainer(ContainerInterface $container = null)
     {
         $this->container = $container;
@@ -54,5 +50,5 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         return 1; // the order in which fixtures will be loaded
     }
 
-
 }
+

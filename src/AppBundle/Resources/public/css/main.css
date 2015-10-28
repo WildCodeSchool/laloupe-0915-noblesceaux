@@ -9,8 +9,10 @@ h1 {
 }
 
 .form-horizontal {
+    position: absolute;
+    display: inline-block;
     float: right;/* Attention à appliquer un float: none; au prochain block qui se situera en dessous. */
-    margin: 5px;
+    margin: 5px 50px 5px 670px;
     border-bottom: red solid 2px;
 
 }
@@ -34,7 +36,7 @@ h1 {
 
 .bouton {
     position: absolute;
-    right: 0;
+    right: 45px;
     top: 48px;
     width: 90px;
 }
