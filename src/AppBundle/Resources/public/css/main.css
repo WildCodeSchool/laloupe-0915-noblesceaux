@@ -8,28 +8,34 @@ h1 {
     margin-left: 5%;
 }
 
-.form-horizontal{
+.form-horizontal {
     float: right;/* Attention à appliquer un float: none; au prochain block qui se situera en dessous. */
     margin: 5px;
     border-bottom: red solid 2px;
 }
 
-.form-group{
+.form-group {
 /*  padding-left: 80%;
  */ display: inline-block;
 
 }
 
-.form-block{
+.form-block {
     display: block;
 }
 
-.form-control{
+.form-control {
     width: 65%;
 }
 
-.ligne{
+.ligne {
     border-top: red solid 2px;
+}
+
+.bouton {
+    float: right;
+    padding-top:-10%;
+
 }
 
 /** slide**/
