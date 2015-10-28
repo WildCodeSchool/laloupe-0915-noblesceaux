@@ -9,8 +9,10 @@ h1 {
 }
 
 .form-horizontal {
+    position: absolute;
+    display: inline-block;
     float: right;/* Attention à appliquer un float: none; au prochain block qui se situera en dessous. */
-    margin: 5px;
+    margin: 5px 50px 5px 670px;
     border-bottom: red solid 2px;
 }
 
@@ -30,21 +32,11 @@ h1 {
     border-top: red solid 2px;
 }
 
-.form-block {
-    display: block;
-}
-
-.form-control {
-    width: 65%;
-}
-
-.ligne {
-    border-top: red solid 2px;
-}
-
 .bouton {
-    float: right;
-    padding-top:-10%;
+    position: absolute;
+    right: 45px;
+    top: 48px;
+    width: 90px;
 }
 
 /** slide**/
