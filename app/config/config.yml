@@ -4,6 +4,11 @@ imports:
     - { resource: services.yml }
     - { resource: @AppBundle/Resources/config/admin.yml }
 
+
+parameters:
+    locale: fr
+
+
 framework:
     #esi:             ~
     translator:      { fallbacks: ["%locale%"] }
