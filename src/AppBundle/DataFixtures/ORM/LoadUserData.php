@@ -20,7 +20,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
     {
 
         $factory = $this->getSecurityManager();
-        
+
         $userAdmin = new User();
         $userAdmin->setUsername('admin');
         $encoder = $factory->getEncoder($userAdmin);
@@ -50,6 +50,5 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface, C
         return 1; // the order in which fixtures will be loaded
     }
 
-
-
 }
+
