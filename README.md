@@ -10,7 +10,7 @@ Plongez dans les arcanes de l'orthographe, de la sémantique et de la typographi
 
 ## Installation
 
-Le projet est développé sous Symfony. Une fois le dépôt clôné localement, assurez-vous d'avoir installé Composer globalement puis lancez la commande :
+Le projet est développé sous Symfony. Une fois le dépôt clôné en local, assurez-vous d'avoir installé Composer globalement puis lancez la commande :
 
     composer install
 
@@ -31,7 +31,7 @@ Pour accéder à l'interface d'administration Sonata, vous devez au préalable a
 
     php app/console fos:user:create --super <username> <email> <password>
 
-Ajouter des *quêtes*, *règles* et *extraits* se fait directement sur phpMyAdmin, car l'interface d'administration n'intègre pour le moment aucune fonction de CRUD.
+Ajouter des *quêtes*, *règles* et *extraits* se fait directement dans phpMyAdmin, car l'interface d'administration n'intègre pour le moment aucune fonction de CRUD.
 
 ## Contribuer au projet
 
