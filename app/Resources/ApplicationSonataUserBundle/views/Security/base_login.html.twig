@@ -70,7 +70,15 @@
             <p> bla bla bla une petite démo après la présentation </p>
         </div>
 
-    <!-- Slider -->
+        <!-- bouton enregistrement -->
+        {% block bouton_enregistrement %}
+        <div class="bouton">
+            <form method="link" action="register/"> <input type="submit" value="s'enregistrer"></form>
+        </div>
+        {% endblock %}
+
+
+        <!-- Slider -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">blablabla</div>
@@ -85,10 +93,6 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
         </div>
-    <!-- bouton enregistrement -->
-    <div class="bouton">
-        <form method="link" action="register/"> <input type="submit" value="s'enregistrer"></form>
-    </div>
 
         {% block external_css %}
             <link rel="stylesheet" href="{{ asset('bundles/app/css/main.css') }}">
