@@ -1,8 +1,8 @@
+# app/config/routing.yml
+
 homepage:
     path: /
     defaults: { _controller: SonataUserBundle:SecurityFOSUser1:login }
-
-# app/config/routing.yml
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
