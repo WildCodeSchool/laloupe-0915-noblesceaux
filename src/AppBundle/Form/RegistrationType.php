@@ -1,10 +1,11 @@
 <?php
-// src/AppBundle/Form/Type/RegistrationType.php
+// src/AppBundle/Form/RegistrationType.php
 
-namespace AppBundle\Form\Type;
+namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 
 
