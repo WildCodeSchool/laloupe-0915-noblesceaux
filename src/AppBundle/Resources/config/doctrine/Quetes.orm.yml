@@ -2,15 +2,10 @@ AppBundle\Entity\Quetes:
     type: entity
     table: quetes
     id:
-        idQuete:
+        id:
             type: integer
-            nullable: false
-            options:
-                unsigned: true
-            id: true
-            column: id_quete
             generator:
-                strategy: IDENTITY
+                strategy: AUTO
     fields:
         codeCategorie:
             type: string
@@ -49,38 +44,7 @@ AppBundle\Entity\Quetes:
                 unsigned: false
             column: temps_limite
     manyToMany:
-        idUtilisateur:
-            targetEntity: Application\Sonata\UserBundle\Entity\User
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: idQuete
-            joinTable:
-                name: quetes_achevees
-                joinColumns:
-                    -
-                        name: id_quete
-                        referencedColumnName: id_quete
-                inverseJoinColumns:
-                    -
-                        name: id
-                        referencedColumnName: id
-            orderBy: null
-        reglesRegle:
+        regles:
             targetEntity: Regles
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: quetesQuete
-            joinTable:
-                name: quetes_has_regles
-                joinColumns:
-                    -
-                        name: quetes_id_quete
-                        referencedColumnName: id_quete
-                inverseJoinColumns:
-                    -
-                        name: regles_id_regle
-                        referencedColumnName: id_regle
-            orderBy: null
+            mappedBy: quetes
     lifecycleCallbacks: {  }

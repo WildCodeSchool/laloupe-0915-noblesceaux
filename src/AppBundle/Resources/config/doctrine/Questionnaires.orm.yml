@@ -1,21 +1,11 @@
 AppBundle\Entity\Questionnaires:
     type: entity
     table: questionnaires
-    indexes:
-        fk_qcm_regles1_idx:
-            columns:
-                - id_regle
-        fk_questionnaires_butins1_idx:
-            columns:
-                - id_butin
     id:
-        idQuestion:
+        id:
             type: integer
-            nullable: false
-            options:
-                unsigned: false
-            id: true
-            column: id_question
+            generator:
+                strategy: AUTO
     fields:
         question:
             type: string
@@ -46,7 +36,7 @@ AppBundle\Entity\Questionnaires:
             inversedBy: null
             joinColumns:
                 id_regle:
-                    referencedColumnName: id_regle
+                    referencedColumnName: id
             orphanRemoval: false
         idButin:
             targetEntity: Butins

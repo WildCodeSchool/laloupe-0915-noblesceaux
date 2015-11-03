@@ -1,18 +1,11 @@
 AppBundle\Entity\Terminologie:
     type: entity
     table: terminologie
-    indexes:
-        fk_terminologie_regles1_idx:
-            columns:
-                - id_regle
     id:
-        idTerme:
+        id:
             type: integer
-            nullable: false
-            options:
-                unsigned: true
-            id: true
-            column: id_terme
+            generator:
+                strategy: AUTO
     fields:
         terme:
             type: string
@@ -35,12 +28,8 @@ AppBundle\Entity\Terminologie:
     oneToOne:
         idRegle:
             targetEntity: Regles
-            cascade: {  }
-            fetch: LAZY
-            mappedBy: null
-            inversedBy: null
             joinColumns:
                 id_regle:
-                    referencedColumnName: id_regle
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

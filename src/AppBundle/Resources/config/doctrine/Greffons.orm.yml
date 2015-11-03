@@ -32,6 +32,6 @@ AppBundle\Entity\Greffons:
             inversedBy: null
             joinColumns:
                 id_regle:
-                    referencedColumnName: id_regle
+                    referencedColumnName: id
             orphanRemoval: false
     lifecycleCallbacks: {  }

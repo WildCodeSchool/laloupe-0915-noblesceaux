@@ -7,10 +7,15 @@ namespace AppBundle\Entity;
  */
 class Questionnaires
 {
+
+
+
+    // GENERATED CODE
+
     /**
      * @var integer
      */
-    private $idQuestion;
+    private $id;
 
     /**
      * @var string
@@ -39,27 +44,13 @@ class Questionnaires
 
 
     /**
-     * Set idQuestion
-     *
-     * @param integer $idQuestion
-     *
-     * @return Questionnaires
-     */
-    public function setIdQuestion($idQuestion)
-    {
-        $this->idQuestion = $idQuestion;
-
-        return $this;
-    }
-
-    /**
-     * Get idQuestion
+     * Get id
      *
      * @return integer
      */
-    public function getIdQuestion()
+    public function getId()
     {
-        return $this->idQuestion;
+        return $this->id;
     }
 
     /**
@@ -182,4 +173,3 @@ class Questionnaires
         return $this->idButin;
     }
 }
-

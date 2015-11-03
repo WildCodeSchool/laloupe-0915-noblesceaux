@@ -128,7 +128,3 @@ class User extends BaseUser
         return $this->afficher_nom;
     }
 }
-
-
-
-

@@ -52,7 +52,7 @@ AppBundle\Entity\QuetesEnCours:
             inversedBy: null
             joinColumns:
                 id_quete:
-                    referencedColumnName: id_quete
+                    referencedColumnName: id
             orphanRemoval: false
         idUtilisateur:
             targetEntity: Application\Sonata\UserBundle\Entity\User

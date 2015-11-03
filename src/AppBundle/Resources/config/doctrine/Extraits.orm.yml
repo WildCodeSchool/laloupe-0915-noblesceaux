@@ -47,7 +47,7 @@ AppBundle\Entity\Extraits:
             inversedBy: null
             joinColumns:
                 id_regle:
-                    referencedColumnName: id_regle
+                    referencedColumnName: id
             orphanRemoval: false
         idButin:
             targetEntity: Butins
